@@ -12,7 +12,6 @@ def homepage():
                            table_names=table_names
                            )
 
-
 @app.route('/tables/<table_name>/')
 def one_table(table_name):
     table_content = connect_to_cursor(one_table_name=table_name, task="get_table_contents")
@@ -28,7 +27,6 @@ def estimate_price():
       estimate_price = connect_ml.make_prediction(processed_data)
       return render_template("estimate_price.html", estimate_price=estimate_price[0])
     
-
 
 
 
