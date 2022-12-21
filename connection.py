@@ -67,6 +67,9 @@ def connect_to_cursor(one_table_name=None, task='get_table_contents'):
     conn.close()
 
 if __name__ =="__main__":
+  table_names = connect_to_cursor(one_table_name='inventory', task='get_table_names')
+  for name in table_names:
+    print(name)
   table_content = connect_to_cursor(one_table_name='inventory', task='get_table_contents')
   for row in table_content:
     print(row)

@@ -1,8 +1,8 @@
 from flask import Flask, redirect, url_for, render_template, request, abort
-import mysql.connector
 from mysql.connector import errorcode
 
 from connection import connect_to_cursor
+import connect_ml
 app = Flask(__name__)
 
 @app.route('/')
@@ -19,32 +19,25 @@ def one_table(table_name):
     return render_template("one_table.html",
                            table_name = table_name,
                         table_content = table_content)
+    
+@app.route('/estimate_price', methods=['POST', 'GET'])
+def estimate_price():
+   if request.method == 'POST':
+      input_info = request.form
+      processed_data = connect_ml.web_input(input_info)
+      estimate_price = connect_ml.make_prediction(processed_data)
+      return render_template("estimate_price.html", estimate_price=estimate_price[0])
+    
 
 
 
 
+if __name__ == '__main__':
+   app.run(debug=True)
 
 
 
-# '''
-# take in input from usr 
-# '''
-# @app.route('/')
-# def student():
-#    return render_template('student.html')
 
-# '''
-# put into result table
-# '''
-# @app.route('/result',methods = ['POST', 'GET'])
-# def result():
-#    if request.method == 'POST':
-#       result = request.form
-#       return render_template("result.html",result = result)
-
-# @app.route('/', methods=['GET', 'POST'])
-# def insert():
-#     return render_template('insert.html')
 
 
 
