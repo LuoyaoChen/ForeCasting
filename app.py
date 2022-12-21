@@ -1,15 +1,25 @@
 
 from flask import Flask, render_template, request
-from flask_mysqldb import MySQL
 
 
 
 app = Flask(__name__)
-mysql = MySQL(app)
 
 
-@app.route('/')
-def hello():
-    return '<h1>Hello, World!</h1>'
+@app.route('/', methods=['GET', 'POST'])
+def insert():
+    return render_template('insert.html')
+
+
+# @app.route('/', methods=['GET', 'POST'])
+# def index():
+#     return render_template('delete.html')
+
+
+# @app.route('/', methods=['GET', 'POST'])
+# def index():
+#     return render_template('update.html')
+
+
 
 
