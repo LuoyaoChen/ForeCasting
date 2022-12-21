@@ -1,0 +1,13 @@
+<!doctype html>
+{{table_name}}
+  <table border = 1>
+    {% for row in table_content %}    
+            <tr>
+                <td>{{row[0]}}</td>
+                <td>{{row[1]}}</td>
+                <td>{{row[2]}}</td>
+                <td>{{row[3]}}</td>
+               </tr>
+    {% endfor %}
+   </tbody>
+</table>
