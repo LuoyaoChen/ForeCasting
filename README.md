@@ -10,6 +10,14 @@ Through this application, user can achieve multiple goals:
         4) Delete existing records in the tables
         5) Fill in personal information and get an estimated price for the insurance quote
 
+### 1.1 Demo video: Table Insert, Update, Delete
+<video src="Demo_videos/demo_table_operations.mov" controls="controls" style="max-width: 730px;">
+</video>
+
+### 1.2 Demo video: Use Machine Learning to Get Estimated Quote Price
+<video src="Demo_videos/demo_ml.mov" controls="controls" style="max-width: 730px;">
+</video>
+
 ## 2. Application Reference Architecture
 <p align="center">
   <img src="Figures/reference_architecture.jpg" title="Business Reference Architecture"/>
