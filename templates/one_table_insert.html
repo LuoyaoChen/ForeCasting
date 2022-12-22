@@ -1,0 +1,28 @@
+<!doctype html>
+<center>
+<H3>Visualize Table After Inserting the Row: {{table_name}} </H3>
+
+<table border = 1>
+    <thead>
+      {% for col in table_columns %}
+        <th>{{col}}</th>
+      {% endfor %}
+    </thead>
+  <tbody>
+    {% for row in table_content %}    
+            <tr>
+                <td>{{row[0]}}</td>
+                <td>{{row[1]}}</td>
+                <td>{{row[2]}}</td>
+                <td>{{row[3]}}</td>
+               </tr>
+    {% endfor %}
+   </tbody>
+</table>
+
+<form target="_blank" action="" method="POST">
+   <center>
+   <p><input onclick="window.location.href = 'http://127.0.0.1:5000/tables/{{table_name}}/'" type="submit" value="Return to the Previous Page" /></p>
+
+  </center>
+ </form>

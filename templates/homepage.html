@@ -11,14 +11,14 @@
   <table border = 1>
      {% for one_tab in table_names %}
       <tr>
-         <th> <a href={{url_for('one_table', table_name = one_tab)}}"> {{ one_tab }} </th>
+         <th> <a href={{url_for('one_table', table_name = one_tab)}}> {{ one_tab }} </th>
       </tr>
     {% endfor %}
   </table>
  </center>
   
   
-  <form action="" method = "post">
+  <form action="http://127.0.0.1:5000/estimate_price" method="POST">
    <center>
     <H3>Next, to get your quote, please enter information below: </H3> 
     <p>Your gender <input type = "text" name = "gender" /></p>
