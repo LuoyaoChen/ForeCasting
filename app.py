@@ -31,7 +31,7 @@ def one_table(table_name):
                         table_content = table_content)
 
 
-@app.route('/tables/<table_name>/insert_one_row/', methods=['POST', 'GET'])
+@app.route('/tables/<table_name>/insert_one_row/', methods=['POST'])
 def one_table_insert(table_name):
     table_columns, table_content = connect_to_cursor(one_table_name=table_name, task="get_table_contents")
     if request.method == 'POST':
@@ -39,13 +39,35 @@ def one_table_insert(table_name):
       to_be_inserted = []
       for _, user_input_value in res.items():
          to_be_inserted.append(user_input_value)
-      table_content = operate_one_row(one_table_name=table_name, op = "insert", table_columns = tuple(table_columns), new_content = tuple(to_be_inserted))
+      table_content = operate_one_row(one_table_name=table_name, op = "insert", table_columns = table_columns, new_content = tuple(to_be_inserted))
       return render_template("one_table_insert.html",
                            table_name = table_name,
                            table_columns = table_columns,
                            table_content = table_content)
     
-    
+@app.route('/tables/<table_name>/update/', methods=['GET','POST'])
+def update(table_name):
+   table_columns, table_content = connect_to_cursor(one_table_name=table_name, task="get_table_contents")
+   return render_template("update.html",
+                           table_name=table_name,
+                           table_columns=table_columns,
+                           table_content=table_content)
+   
+@app.route('/tables/<table_name>/update/update_one_row/', methods=['GET', 'POST'])
+def one_table_update(table_name):
+   table_columns, table_content = connect_to_cursor(one_table_name=table_name, task="get_table_contents")
+   res = request.form
+   to_be_updated = []
+   for _, user_input_value in res.items():
+      to_be_updated.append(user_input_value)
+   table_content = operate_one_row(one_table_name=table_name, op = "update", 
+                                    table_columns = table_columns, 
+                                    new_content = tuple(to_be_updated))
+   return render_template("one_table_update.html",
+                        table_name = table_name,
+                           table_columns = table_columns,
+                           table_content = table_content)
+
 @app.route('/tables/<table_name>/delete_last_row/', methods=['POST', 'GET'])
 def one_table_delete(table_name):
     table_columns, table_content = connect_to_cursor(one_table_name=table_name, task="get_table_contents")

@@ -21,10 +21,10 @@
    </tbody>
 </table>
 
-<H3>Insert into the table: {{table_name}} </H3>
-<form action="{{ url_for('one_table_insert',table_name=table_name) }}" method="POST">
+<H3>Insert Into Table: {{table_name}} </H3>
+<form action="{{ url_for('one_table_insert',table_name=table_name) }}" method="POST" name = "insert_form">
       {% for col in table_columns %}
-      <p> {{col}} <input type = "text" name = "{{col}}" /></p>
+       <input type="text" name={{col}} placeholder={{col}} class="form-control">
       {% endfor %}
      <form target="_blank" action="" method="POST">
       <center><p>
@@ -34,10 +34,13 @@
     </form>
 </form>
 
+<H3>Update Table: {{table_name}} </H3>
+<p>
+  <input onclick="window.location.href = 'http://127.0.0.1:5000/tables/{{table_name}}/update/'" type="submit" value="Update" />
+</p>
 
-<H3>Delete last row: {{table_name}} </H3>
-<form action="{{ url_for('one_table_delete',table_name = table_name) }}"method="GET">
-     <p> <input type = "submit" value = "Delete last row" ></p>
-</form>
 
+
+<H3>Delete Last Row: {{table_name}} </H3>
+<p> <input onclick="window.location.href = 'http://127.0.0.1:5000/tables/{{table_name}}/delete_last_row/'" type = "submit" value = "Delete last row" ></p>
 </center>

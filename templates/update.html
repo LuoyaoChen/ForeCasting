@@ -1,0 +1,13 @@
+<!doctype html>
+<center>
+<H3>Enter the Row You Wish to Update </H3>
+<form action="{{ url_for('one_table_update',table_name=table_name) }}" method="POST" name="update_form">
+    {% for col in table_columns %}
+      <input type="text" name={{col}} placeholder={{col}} class="form-control">
+      {% endfor %}
+      <center><p>
+        <input type="submit" value="Update" />
+      </p>
+      </center>
+ </form>
+</center>
