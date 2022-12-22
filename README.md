@@ -1,14 +1,24 @@
 # Insurance Database Application
 
-## Database Structure
-![Image text](Figures/database_structure.jpeg)
+## Introduction
+We built a database web application using Flask and Python. The back-end database is stored in Azure Database. A machine learning model that predicts clients' risk level and their corresponding price is also integrated in this application.
+Through this application, user can achieve multiple goals: 
 
-## Logical Schema of the Database
-![Image text](Figures/logical_schema.png)
+        1) View the tables in the database
+        2) Insert new data to the tables
+        3) Update existing records in the tables
+        4) Delete existing records in the tables
+        5) Fill in personal information and get an estimated price for the insurance quote
 
 ## Application Reference Architecture
 ![Image text](Figures/reference_architecture.jpg)
 
+## Design of Database
+### Database Structure
+![Image text](Figures/database_structure.jpeg)
+
+### Logical Schema of the Database
+![Image text](Figures/logical_schema.png)
 
 ## How to run the web app
 0. PreReq:git-lfs (install for mac):
@@ -30,9 +40,22 @@
         set FLASK_APP=app 
         set FLASK_ENV=development
         flask run
+4. access the homepage. 
 
+   To view and modify tables, these steps:
 
+        1.click the table name we want to view and/or modify
+        2.access the table webpage
+        3.select the operation: insert, update, or delete
+        4.fill in the data we want to modify
+        5.click inset/update/delete
 
+   To get personalized insurance quote:
+
+        1. fill in the personal information on the page
+        2. click submit
+        3. access the estimate_price page and view the predicted insurance quote.
+ 
 ## Reference
 1. [Connect MS Azure with Python](https://learn.microsoft.com/en-us/azure/mysql/single-server/connect-python)
 2. [Get all table names from MS Azure using python](https://stackoverflow.com/questions/3556305/how-to-retrieve-table-names-in-a-mysql-database-with-python-and-mysqldb)
