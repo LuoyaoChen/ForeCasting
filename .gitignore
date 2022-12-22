@@ -1,2 +1,6 @@
 **/__pycache__
 *.pkl
+Datamodel_file/**
+MachineLearning_modeling/**
+Reports/**
+Figures/**

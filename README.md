@@ -1,9 +1,15 @@
 # Diabetes ForeCasting
 ## How to run the web app
+0. PreReq:git-lfs (install for mac):
+
+        wget https://github.com/git-lfs/git-lfs/releases/download/v3.3.0/git-lfs-darwin-amd64-v3.3.0.zip
+        unzip git-lfs-darwin-amd64-v3.3.0.zip
+        cd ../../git-lfs-3.3.0/
+        bash install.sh
 1. git clone this repo
 2. cd into this dir on your local computer
 3. run (for mac):
-        wget https://github.com/git-lfs/git-lfs/releases/download/v3.3.0/git-lfs-darwin-amd64-v3.3.0.zip
+
         export FLASK_APP=app
         export FLASK_ENV=development
         flask run
