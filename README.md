@@ -19,13 +19,18 @@
         bash install.sh
 1. git clone this repo
 2. cd into this dir on your local computer
-3. run (for mac):
+3. run (for macOS users):
 
-        export FLASK_APP=app
+        export FLASK_APP=app 
         export FLASK_ENV=development
         flask run
-Database structure
-![Image text](images/data_hotmap.png)
+
+   run (for Windows users):
+
+        set FLASK_APP=app 
+        set FLASK_ENV=development
+        flask run
+
 
 
 ## Reference
