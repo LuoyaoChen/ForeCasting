@@ -11,17 +11,12 @@ Through this application, user can achieve multiple goals:
         5) Fill in personal information and get an estimated price for the insurance quote
 
 ### 1.1 Demo video: Table Insert, Update, Delete
-<video src="Demo_videos/demo_table_operations.mov" 
-controls="controls" 
-type="video/mp4"
-style="max-width: 730px;">
-</video>
+![](Demo_videos/demo_table_operations.gif)
+
 
 ### 1.2 Demo video: Use Machine Learning to Get Estimated Quote Price
-<video src="Demo_videos/demo_ml.mov" controls="controls" 
-type="video/mp4"
-style="max-width: 730px;">
-</video>
+
+![](Demo_videos/demo_ml.gif)
 
 ## 2. Application Reference Architecture
 <p align="center">
