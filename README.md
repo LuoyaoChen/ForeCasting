@@ -1,4 +1,15 @@
-# Diabetes ForeCasting
+# Insurance Database Application
+
+## Database Structure
+![Image text](Figures/database_structure.jpeg)
+
+## Logical Schema of the Database
+![Image text](Figures/logical_schema.png)
+
+## Application Reference Architecture
+![Image text](Figures/reference_architecture.jpg)
+
+
 ## How to run the web app
 0. PreReq:git-lfs (install for mac):
 
@@ -13,6 +24,9 @@
         export FLASK_APP=app
         export FLASK_ENV=development
         flask run
+Database structure
+![Image text](images/data_hotmap.png)
+
 
 ## Reference
 1. [Connect MS Azure with Python](https://learn.microsoft.com/en-us/azure/mysql/single-server/connect-python)
